@@ -4,7 +4,6 @@
 function eachFeedlyUrl(callback) {
   var link_attribute = "data-alternate-link";
   var links = document.querySelectorAll("div[" + link_attribute + "]");
-  console.log(links);
   for (var i = 0, size = links.length; i < size; i++) {
     var link = links[i];
     var url = link.getAttribute(link_attribute);
@@ -13,5 +12,5 @@ function eachFeedlyUrl(callback) {
 }
 
 eachFeedlyUrl(function(url) {
-  self.port.emit("link", { url: url });
+  self.port.emit("link", url);
 });
