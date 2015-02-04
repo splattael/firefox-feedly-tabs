@@ -16,19 +16,23 @@ eachFeedlyUrl(function(entryid, url) {
   self.port.emit("link", { entryid: entryid, url: url });
 });
 
+function extract_feedly_data(cookie) {
+  var regexp = /session@cloud=(\{.*?\})/;
+  var matched = cookie.match(regexp);
+  console.log(matched[1]);
+  if (matched) {
+    return JSON.parse(matched[1]);
+  }
+}
+
+console.log(document.cookie);
+var feedly_data = extract_feedly_data(document.cookie);
+var token = feedly_data.feedlyToken || feedly_data.feedlyRefreshToken;
+console.log("token", token);
+
 self.port.on("tab_closed", function(link) {
-  console.log("CLOSED: " + link.entryid);
-  var ids = [ link.entryid ];
-  console.log(ids);
-  console.log("YO!");
-  console.log("YO2!");
-  console.log(unsafeWindow);
-  console.log("YO3!");
-  var window = unsafeWindow;
-  console.log(window);
-  console.log(window.streets);
-  console.log(window.streets.service("reader"));
-  window.streets.service("reader").askMarkEntriesAsRead(ids);
+  console.log("tab_closed", token, link);
+  var data = { token: token, link: link };
+  console.log("data", data);
+  self.port.emit("mark_as_read", data);
 });
-
-
