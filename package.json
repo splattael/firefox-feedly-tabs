@@ -1,9 +1,10 @@
 {
   "name": "feedly-tabs",
   "title": "feedly-tabs",
-  "id": "jid1-ivERnZvVVgaD3g",
+  "id": "jid1-ivERnZvVVgaD3g@jetpack",
   "description": "Open Feedly articles in new tabs.",
   "author": "Peter Suschlik",
   "license": "MIT",
-  "version": "0.1"
+  "version": "0.2.0",
+  "main": "lib/main.js"
 }

@@ -11,8 +11,7 @@ See https://addons.mozilla.org/en-US/firefox/addon/feedly-tabs/
 ## Load unpacked extension
 
 * `git clone https://github.com/splattael/firefox-feedly-tabs.git`
-* Run `cfx xpi`
-* Open `feedly-tabs.xpi` in Firefox
+* Run `jpm run`
 
 ## Release extension in Firefox ADD-ON developer hub (as XPI)
 
@@ -20,8 +19,8 @@ See https://addons.mozilla.org/en-US/firefox/addon/feedly-tabs/
 * bump version in package.json
 * `git tag vVERSION`
 * `git push --tags`
-* `cfx xpi`
-* Upload `feedly-tabs.xpi` to https://addons.mozilla.org/en-US/developers/addons
+* `jpm xpi`
+* Upload `*.xpi` to https://addons.mozilla.org/en-US/developers/addons
 
 ## Ideas
 
