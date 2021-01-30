@@ -1,3 +1,15 @@
+# DISCONTINUED
+
+:warning: :warning: :warning:
+
+This FireFox addons has been discontinued.
+
+Please use https://github.com/SemperRoto/firefox-feedly-tabs.
+
+:warning: :warning: :warning:
+
+---
+
 # ![Feedly tabs icon](data/images/icon-32.png) Feedly tabs for Firefox
 
 Open Feedly articles in new tabs.
